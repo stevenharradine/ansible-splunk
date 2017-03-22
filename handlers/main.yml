@@ -1,4 +1,5 @@
 ---
 - name: Start Service | splunk
+  become: true
   become_user: splunk
   command: /opt/splunkforwarder/bin/splunk --accept-license start
