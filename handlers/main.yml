@@ -1,4 +1,4 @@
 ---
 - name: Reload Service | splunk
   become_user: splunk
-  command: ./opt/splunk/bin/splunk --accept-license reload
+  command: ./opt/splunkforwarder/bin/splunk --accept-license reload
