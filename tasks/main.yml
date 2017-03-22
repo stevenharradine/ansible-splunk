@@ -6,6 +6,10 @@
     group: root
     mode: 0644
 
+- name: Install splunk universal forwarder
+  apt:
+    deb: "/tmp/{{ splunkforwarder_filename }}"
+
 - template:
     src: "templates/etc/system/local/{{ item }}.conf"
     dest: "/opt/splunkforwarder/etc/system/local/{{ item }}.conf"
