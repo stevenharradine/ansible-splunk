@@ -1,0 +1,7 @@
+---
+- name: Reload Service | splunk
+  service:
+    state: reloaded
+    name: splunk
+  tags:
+    - disruptive

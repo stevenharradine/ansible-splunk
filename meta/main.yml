@@ -1,0 +1,13 @@
+---
+dependencies:
+galaxy_info:
+  author: "Steven Harradine"
+  description: "Installs and configures splunk"
+  license: "MIT"
+  platforms:
+    - name: "Ubuntu"
+      versions:
+        - all
+  categories:
+    - "monitoring"
+    - "automation"
