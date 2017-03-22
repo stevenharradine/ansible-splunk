@@ -19,4 +19,4 @@
   with_items:
     - inputs
     - outputs
-  notify: Reload Service | splunk
+  notify: Start Service | splunk
