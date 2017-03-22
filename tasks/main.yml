@@ -1,13 +1,13 @@
 ---
 - copy:
-    src: /files/{{ splunkforwarder_filename }}
-    dest: /tmp/{{ splunkforwarder_filename }}
+    src: "files/{{ splunkforwarder_filename }}"
+    dest: "/tmp/{{ splunkforwarder_filename }}"
     owner: root
     group: root
     mode: 0644
 
 - template:
-    src: "/templates/etc/system/local/{{ item }}.conf"
+    src: "templates/etc/system/local/{{ item }}.conf"
     dest: "/opt/splunkforwarder/etc/system/local/{{ item }}.conf"
     owner: root
     group: root
