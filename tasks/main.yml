@@ -10,6 +10,12 @@
   apt:
     deb: "/tmp/{{ splunkforwarder_filename }}"
 
+- name: Add splunk user to groups
+  user:
+    name: splunk
+    group: splunk
+    groups: adm
+
 - template:
     src: "templates/etc/system/local/{{ item }}.conf"
     dest: "/opt/splunkforwarder/etc/system/local/{{ item }}.conf"
