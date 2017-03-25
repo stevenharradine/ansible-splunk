@@ -1,12 +1,13 @@
 ---
-- copy:
+- name: Copy over Splunk installer
+  copy:
     src: "files/{{ splunkforwarder_filename }}"
     dest: "/tmp/{{ splunkforwarder_filename }}"
     owner: root
     group: root
     mode: 0644
 
-- name: Install splunk universal forwarder
+- name: Install Splunk Universal Forwarder
   apt:
     deb: "/tmp/{{ splunkforwarder_filename }}"
 
@@ -16,7 +17,7 @@
     group: splunk
     groups: adm
 
-- name: Install custom certs
+- name: Install custom certificates
   template:
     src: "templates/etc/auth/{{ splunk_certificate_folder }}/{{ item }}.pem"
     dest: "/opt/splunkforwarder/etc/auth/{{ splunk_certificate_folder }}/{{ item }}.pem"
@@ -29,7 +30,7 @@
   notify: Start Service | splunk
   when: splunk_use_custom_certificate
 
-- name: copy over config
+- name: Copy over configuration
   template:
     src: "templates/etc/system/local/{{ item }}.conf"
     dest: "/opt/splunkforwarder/etc/system/local/{{ item }}.conf"
