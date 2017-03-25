@@ -4,9 +4,6 @@ splunkforwarder_filename: 'splunkforwarder-6.5.1-f74036626f0c-linux-2.6-amd64.de
 splunk_inputs:
   - { path: /var/log/auth.log, index: main, sourcetype: application_log }
 
-splunk_outputs:
-  - { server: localhost, port: 8089}
-
 splunk_forward_address: localhost
 splunk_forward_port: 53997
 
