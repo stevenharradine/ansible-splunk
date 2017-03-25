@@ -11,4 +11,4 @@ splunk_outputs:
 splunk_forward_address: localhost
 splunk_forward_port: 53997
 
-splunk_use_custom_cert: no
+splunk_use_custom_certificate: no
