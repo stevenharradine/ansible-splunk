@@ -16,7 +16,21 @@
     group: splunk
     groups: adm
 
-- template:
+- name: Install custom certs
+  template:
+    src: "templates/etc/auth/{{ splunk_certificate_folder }}/{{ item }}.pem"
+    dest: "/opt/splunkforwarder/etc/auth/{{ splunk_certificate_folder }}/{{ item }}.pem"
+    owner: splunk
+    group: splunk
+    mode: 0644
+  with_items:
+    - { folder: cert, filename: ca }
+    - { folder: cert, filename: fullcertificate }
+  notify: Start Service | splunk
+  when: splunk_use_custom_certificate
+
+- name: copy over config
+  template:
     src: "templates/etc/system/local/{{ item }}.conf"
     dest: "/opt/splunkforwarder/etc/system/local/{{ item }}.conf"
     owner: splunk
