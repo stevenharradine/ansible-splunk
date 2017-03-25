@@ -29,8 +29,8 @@
     group: splunk
     mode: 0644
   with_items:
-    - { folder: cert, filename: ca }
-    - { folder: cert, filename: fullcertificate }
+    - ca
+    - fullcertificate
   notify: Start Service | splunk
   when: splunk_use_custom_certificate
 
