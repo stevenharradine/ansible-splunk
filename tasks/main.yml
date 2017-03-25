@@ -1,4 +1,9 @@
 ---
+- name: Get hostname
+  command: /bin/cat /etc/hostname
+  register: splunk_hostname
+  when: splunk_read_hostname
+
 - name: Copy over Splunk installer
   copy:
     src: "files/{{ splunkforwarder_filename }}"
