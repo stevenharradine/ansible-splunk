@@ -1,7 +1,5 @@
 ---
 splunkforwarder_filename: 'splunkforwarder-6.5.1-f74036626f0c-linux-2.6-amd64.deb'
-splunk_hostname: splunk_hostname
-splunk_read_hostname: yes
 
 splunk_inputs:
   - { path: /var/log/auth.log, index: main, sourcetype: application_log }
