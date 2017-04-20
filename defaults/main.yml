@@ -9,3 +9,5 @@ splunk_forward_port: 53997
 
 splunk_use_custom_certificate: no
 splunk_certificate_folder: cert
+
+splunk_forwarder_enabled: no
