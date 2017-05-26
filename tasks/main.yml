@@ -3,17 +3,8 @@
   command: /bin/cat /etc/hostname
   register: splunk_hostname
 
-- name: Copy over Splunk installer
-  copy:
-    src: "files/{{ splunkforwarder_filename }}"
-    dest: "/tmp/{{ splunkforwarder_filename }}"
-    owner: root
-    group: root
-    mode: 0644
-
-- name: Install Splunk Universal Forwarder
-  apt:
-    deb: "/tmp/{{ splunkforwarder_filename }}"
+- name: include installer
+  include: "copyinstall/{{ splunk_install_type }}.yml"
 
 - name: Add splunk user to groups
   user:

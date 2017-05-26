@@ -1,5 +1,8 @@
 ---
-splunkforwarder_filename: 'splunkforwarder-6.5.1-f74036626f0c-linux-2.6-amd64.deb'
+splunk_universal_forwarder_filename: 'splunkforwarder-6.5.1-f74036626f0c-linux-2.6-amd64.deb'
+splunk_heavy_forwarder_filename: 'splunkforwarder-6.5.1-f74036626f0c-linux-2.6-amd64.deb'
+
+splunk_install_type: universal
 
 splunk_inputs:
   - { path: /var/log/auth.log, index: main, sourcetype: application_log }
