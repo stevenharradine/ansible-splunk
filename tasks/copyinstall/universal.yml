@@ -1,3 +1,4 @@
+---
 - name: Copy over Splunk installer
   copy:
     src: "files/{{ splunk_universal_forwarder_filename }}"
