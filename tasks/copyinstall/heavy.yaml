@@ -1,0 +1,21 @@
+---
+- name: Copy over Splunk installer | splunk
+  copy:
+    src: "files/{{ item }}"
+    dest: "/tmp/{{ item }}"
+    owner: root
+    group: root
+    mode: 0644
+  with_items:
+    - "{{ splunk_heavy_forwarder_filename }}.part1.rar"
+    - "{{ splunk_heavy_forwarder_filename }}.part2.rar"
+    - "{{ splunk_heavy_forwarder_filename }}.part3.rar"
+
+- name: Combine and extract archive | splunk
+  unarchive:
+    src: "/tmp/{{ splunk_heavy_forwarder_filename }}.part1.rar"
+    dest: /tmp/
+
+- name: Install Splunk Heavy Forwarder | splunk
+  apt:
+    deb: "/tmp/{{ splunk_heavy_forwarder_filename }}.deb"

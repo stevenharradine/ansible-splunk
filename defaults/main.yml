@@ -1,6 +1,6 @@
 ---
 splunk_universal_forwarder_filename: 'splunkforwarder-6.5.1-f74036626f0c-linux-2.6-amd64.deb'
-splunk_heavy_forwarder_filename: 'splunkforwarder-6.5.1-f74036626f0c-linux-2.6-amd64.deb'
+splunk_heavy_forwarder_filename: 'splunk-6.5.2-67571ef4b87d-linux-2.6-amd64'
 
 splunk_install_type: universal
 
