@@ -1,5 +1,5 @@
 ---
-- name: Copy over Splunk installer
+- name: Copy over Splunk installer | splunk
   copy:
     src: "files/{{ splunk_universal_forwarder_filename }}"
     dest: "/tmp/{{ splunk_universal_forwarder_filename }}"
@@ -7,6 +7,6 @@
     group: root
     mode: 0644
 
-- name: Install Splunk Universal Forwarder
+- name: Install Splunk Universal Forwarder | splunk
   apt:
     deb: "/tmp/{{ splunk_universal_forwarder_filename }}"

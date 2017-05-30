@@ -1,18 +1,18 @@
 ---
-- name: Get hostname
+- name: Get hostname | splunk
   command: /bin/cat /etc/hostname
   register: splunk_hostname
 
 - name: include installer
   include: "copyinstall/{{ splunk_install_type }}.yml"
 
-- name: Add splunk user to groups
+- name: Add splunk user to groups | splunk
   user:
     name: splunk
     group: splunk
     groups: adm
 
-- name: Install custom certificates
+- name: Install custom certificates | splunk
   template:
     src: "templates/etc/auth/{{ splunk_certificate_folder }}/{{ item }}.pem"
     dest: "/opt/splunkforwarder/etc/auth/{{ splunk_certificate_folder }}/{{ item }}.pem"
@@ -25,7 +25,7 @@
   notify: Start Service | splunk
   when: splunk_use_custom_certificate
 
-- name: Copy over configuration
+- name: Copy over configuration | splunk
   template:
     src: "templates/etc/system/local/{{ item }}.conf"
     dest: "/opt/splunkforwarder/etc/system/local/{{ item }}.conf"
