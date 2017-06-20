@@ -3,3 +3,8 @@
   become: true
   become_user: splunk
   command: "/opt/splunk{% if splunk_install_type == 'universal' %}forwarder{% endif %}/bin/splunk --accept-license start"
+
+- name: Restart Service | splunk
+  become: true
+  become_user: splunk
+  command: "/opt/splunk{% if splunk_install_type == 'universal' %}forwarder{% endif %}/bin/splunk restart"

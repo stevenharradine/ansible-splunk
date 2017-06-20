@@ -10,3 +10,4 @@
 - name: Install Splunk Universal Forwarder | splunk
   apt:
     deb: "/tmp/{{ splunk_universal_forwarder_filename }}"
+  notify: Start Service | splunk

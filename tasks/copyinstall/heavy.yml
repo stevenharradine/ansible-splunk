@@ -19,3 +19,4 @@
 - name: Install Splunk Heavy Forwarder | splunk
   apt:
     deb: "/tmp/{{ splunk_heavy_forwarder_filename }}.deb"
+  notify: Start Service | splunk

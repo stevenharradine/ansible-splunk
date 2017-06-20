@@ -30,7 +30,7 @@
   with_items:
     - ca
     - fullcertificate
-  notify: Start Service | splunk
+  notify: Restart Service | splunk
   when: splunk_use_custom_certificate
 
 - name: Copy over configuration | splunk
@@ -43,4 +43,4 @@
   with_items:
     - inputs
     - outputs
-  notify: Start Service | splunk
+  notify: Restart Service | splunk
