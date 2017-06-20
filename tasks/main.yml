@@ -12,6 +12,14 @@
     group: splunk
     groups: adm
 
+- name: Make sure certificate folder exists | splunk
+  file:
+    owner: splunk
+    group: splunk
+    path: "/opt/splunkforwarder/etc/auth/{{ splunk_certificate_folder }}"
+    state: directory
+    mode: 0755
+
 - name: Install custom certificates | splunk
   template:
     src: "templates/etc/auth/{{ splunk_certificate_folder }}/{{ item }}.pem"
